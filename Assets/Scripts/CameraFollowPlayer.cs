@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollowPlayer : MonoBehaviour
 {
     public Transform player; // Reference to the player's transform
+    [SerializeField, Range(0, 100)] private int offset = 10;
 
     void Update()
     {
@@ -12,7 +13,10 @@ public class CameraFollowPlayer : MonoBehaviour
         {
             // Update the camera's position to match the player's position with the offset
 
-            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z - 10);
+            //transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z - offset);
+
+            Vector3 newPosition = transform.position;
+
         }
     }
 }
